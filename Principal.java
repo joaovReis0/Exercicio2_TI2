@@ -14,7 +14,7 @@ public class Principal {
 		dao.conectar();
 		
 		while(opc!=5) {
-			System.out.println("Escolha uma opÁ„o:\n1- Para listar\n2- Para inserir\n3- Para excluir\n4- Para atualizar\n5- Para sair");
+			System.out.println("Escolha uma op√ß√£o:\n1- Para listar\n2- Para inserir\n3- Para excluir\n4- Para atualizar\n5- Para sair");
 			opc = sc.nextInt();
 			
 			Aluno aluno = new Aluno();
@@ -26,7 +26,7 @@ public class Principal {
 				int codigo = 0;
 				String nome, turma;
 				char sexo;
-				System.out.println("Informe o cÛdigo do aluno:");
+				System.out.println("Informe o c√≥digo do aluno:");
 				codigo = sc.nextInt();
 				aluno.setCodigo(codigo);
 				
@@ -50,12 +50,12 @@ public class Principal {
 			case 4://atualizar
 				int opc2 = 0;
 				
-				System.out.println("Informe o que ir· atualizar nas informaÁıes do aluno:\n- Digite 1 para alterar o cÛdigo\n- Digite 2 para alterar o nome\n- Digite 3 para alterar a turma\n- Digite 4 para alterar o sexo");
+				System.out.println("Informe o que ir√° atualizar nas informa√ß√µes do aluno:\n- Digite 1 para alterar o c√≥digo\n- Digite 2 para alterar o nome\n- Digite 3 para alterar a turma\n- Digite 4 para alterar o sexo");
 				opc2 = sc.nextInt();
 				
 				if(opc2==1) {
 					int cod;
-					System.out.println("Informe o novo cÛdigo:");
+					System.out.println("Informe o novo c√≥digo:");
 					cod = sc.nextInt();
 					
 					aluno.setCodigo(cod);
@@ -82,49 +82,14 @@ public class Principal {
 					aluno.setSexo(sex);
 					dao.atualizarAluno(aluno);
 				}else {
-					System.out.println("OpÁ„o Inv·lida!");
+					System.out.println("Op√ß√£o Inv√°lida!");
 				}
 				break;
 			default:
-				System.out.println("OpÁ„o inv·lida!");
+				System.out.println("Op√ß√£o inv√°lida!");
 				break;
 			}
 		}
-
-		/*
-		//Inserir um elemento na tabela
-		Usuario usuario = new Usuario(11, "pablo", "pablo",'M');
-		if(dao.inserirUsuario(usuario) == true) {
-			System.out.println("Inser√ß√£o com sucesso -> " + usuario.toString());
-		}
-		
-		//Mostrar usu√°rios do sexo masculino		
-		System.out.println("==== Mostrar usu√°rios do sexo masculino === ");
-		Usuario[] usuarios = dao.getUsuariosMasculinos();
-		for(int i = 0; i < usuarios.length; i++) {
-			System.out.println(usuarios[i].toString());
-		}
-
-		//Atualizar usu√°rio
-		usuario.setSenha("nova senha");
-		dao.atualizarUsuario(usuario);
-
-		//Mostrar usu√°rios do sexo masculino
-		System.out.println("==== Mostrar usu√°rios === ");
-		usuarios = dao.getUsuarios();
-		for(int i = 0; i < usuarios.length; i++) {
-			System.out.println(usuarios[i].toString());
-		}
-		
-		//Excluir usu√°rio
-		dao.excluirUsuario(usuario.getCodigo());
-		
-		//Mostrar usu√°rios
-		usuarios = dao.getUsuarios();
-		System.out.println("==== Mostrar usu√°rios === ");		
-		for(int i = 0; i < usuarios.length; i++) {
-			System.out.println(usuarios[i].toString());
-		}*/
 		
 		dao.close();
 	}
